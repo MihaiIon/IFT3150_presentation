@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
-import Redbox from 'redbox-react';
-import { AppContainer } from 'react-hot-loader';
+import React from "react";
+import PropTypes from "prop-types";
+import ReactDOM from "react-dom";
+import Redbox from "redbox-react";
+import { AppContainer } from "react-hot-loader";
 
-import Presentation from './presentation';
+import Presentation from "./src";
 
 const CustomErrorReporter = ({ error }) => <Redbox error={error} />;
 
@@ -16,17 +16,17 @@ ReactDOM.render(
   <AppContainer errorReporter={CustomErrorReporter}>
     <Presentation />
   </AppContainer>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 if (module.hot) {
-  module.hot.accept('./presentation', () => {
-    const NextPresentation = require('./presentation').default;
+  module.hot.accept("./src", () => {
+    const NextPresentation = require("./src").default;
     ReactDOM.render(
       <AppContainer errorReporter={CustomErrorReporter}>
         <NextPresentation />
       </AppContainer>,
-      document.getElementById('root')
+      document.getElementById("root")
     );
   });
 }
