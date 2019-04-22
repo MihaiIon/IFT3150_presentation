@@ -2,6 +2,6 @@
 // Helpers / Get Asset
 // ======================================================
 
-const ASSETS_PATH = "./assets/";
+const ASSETS_PATH = "./assets";
 
-export default filename => `${ASSETS_PATH}${filename}`;
+export default filename => `${ASSETS_PATH}/${filename}`;

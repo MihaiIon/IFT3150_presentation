@@ -4,6 +4,9 @@ import createTheme from "spectacle/lib/themes/default";
 // Components
 import { Deck } from "spectacle";
 import Introduction from "./Introduction";
+import Design from "./Design";
+import Implementation from "./Implementation";
+import Conclusion from "./Conclusion";
 
 // Theme
 // ======================================================
@@ -11,8 +14,8 @@ import Introduction from "./Introduction";
 const theme = createTheme(
   {
     primary: "white",
-    secondary: "#1F2022",
-    tertiary: "#03A9FC",
+    secondary: "#139daf",
+    tertiary: "139daf",
     quaternary: "#CECECE"
   },
   {
@@ -27,7 +30,10 @@ const theme = createTheme(
 function Presentation() {
   return (
     <Deck transition={["slide"]} transitionDuration={500} theme={theme}>
-      <Introduction />
+      {Introduction}
+      {Design}
+      {Implementation}
+      {Conclusion}
     </Deck>
   );
 }
